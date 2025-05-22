@@ -8,6 +8,9 @@ function visit() {
   // var visitor = 0;      // Q. 왜 방문자 수가 계속 1일까요?
   visitor++;
   console.log("현재 방문자 수:", visitor);
+  // var visitor = 0;      // Q. 왜 방문자 수가 계속 1일까요?
+  visitor++;
+  console.log("현재 방문자 수:", visitor);
 }
 
 visit();
