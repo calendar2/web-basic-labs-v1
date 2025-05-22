@@ -5,8 +5,14 @@
 
 function checkByCondition(num, callback) {
   // TODO: callback을 이용해 조건 검사
+  return callback(num);
 }
 
 // 1) 짝수인지 검사
+console.log(checkByCondition(2, (num) => (num % 2 ? "홀수" : "짝수")));
+
 // 2) 10보다 큰지 검사
+console.log(checkByCondition(11, (num) => num > 10));
+
 // 3) 3의 배수인지 검사
+console.log(checkByCondition(9, (num) => num % 3 === 0));

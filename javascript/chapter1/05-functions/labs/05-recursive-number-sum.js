@@ -2,4 +2,10 @@
 // 예: sumTo(5) → 15
 function sumTo(n) {
   // TODO
+  if (n === 1) {
+    return 1;
+  }
+  return n + sumTo(n - 1);
 }
+
+console.log(sumTo(5));
