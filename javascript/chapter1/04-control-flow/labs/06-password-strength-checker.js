@@ -4,4 +4,40 @@
 - 대문자 1개 이상
 - 숫자 1개 이상
 - 특수문자 1개 이상 (!@#$%^&*)
-*/ 
+*/
+
+const readline = require("readline");
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("비밀번호를 입력해주세요. ", (input) => {
+  pwd = input.toString();
+  const len = pwd.length;
+  const upperCheck = /[A-Z]/.test(pwd);
+  const numberCheck = /[0-9]/.test(pwd);
+  const check = /[!@#$%^&*]/.test(pwd);
+
+  if (len < 8) {
+    console.log("길이가 8자 이상이어야 합니다.");
+  }
+
+  if (!upperCheck) {
+    console.log("대문자를 반드시 포함해주세요!");
+  }
+
+  if (!numberCheck) {
+    console.log("숫자를 반드시 포함해주세요!");
+  }
+
+  if (!check) {
+    console.log("특수문자를 반드시 포함해주세요!");
+  }
+
+  if (len >= 8 && check && upperCheck && numberCheck) {
+    console.log("강한 비밀번호!");
+  }
+  rl.close();
+});
