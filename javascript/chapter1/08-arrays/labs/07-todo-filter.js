@@ -10,3 +10,5 @@ const todos = [
 ];
 
 // TODO: filter로 완료되지 않은 할 일만 골라서 출력
+const unCompletedTodos = todos.filter((todo) => todo.completed === false);
+console.log(unCompletedTodos);

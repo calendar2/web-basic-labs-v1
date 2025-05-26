@@ -13,8 +13,17 @@
 
     <script>
       // TODO: 배송 요청사항 입력 폼에서 비어있을 경우 제출을 막고 경고창을 띄우세요.
+      const deliveryForm = document.querySelector("#deliveryForm");
+      const request = document.querySelector("#request");
+
       // 1. submit 이벤트 발생 시 .value 검사
       // 2. 비어있으면 alert("요청사항을 입력해주세요") 출력 후 제출 막기
+      deliveryForm.addEventListener("submit", (e) => {
+        if (!request.value) {
+          alert("요청사항을 입력해주세요");
+          e.preventDefault();
+        }
+      });
     </script>
   </body>
 </html>

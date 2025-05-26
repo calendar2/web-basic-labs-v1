@@ -9,3 +9,4 @@ const cart = [
 ];
 
 // TODO: reduce로 총합 계산
+console.log(cart.reduce((total, item) => item.price + total, 0));
