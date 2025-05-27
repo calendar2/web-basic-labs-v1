@@ -8,6 +8,18 @@
     <p id="error"></p>
     <script>
       // TODO: .includes("@") 검사, 올바르면 "확인됨", 아니면 에러 메시지
+      const emailForm = document.querySelector("#emailForm");
+      const email = document.querySelector("#email");
+      const error = document.querySelector("#error");
+
+      emailForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (email.value.includes("@")) {
+          error.textContent = "확인됨";
+        } else {
+          error.textContent = "이메일 주소는 @를 포함해야 합니다.";
+        }
+      });
     </script>
   </body>
 </html>

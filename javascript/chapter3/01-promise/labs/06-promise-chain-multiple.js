@@ -3,15 +3,16 @@
 
 아래 Promise 함수들로 1 → 2 → 3 순서로 실행해서,
 최종 결과를 출력하세요.
+*/
 
 function step1() {
-  return new Promise(resolve => setTimeout(() => resolve("1단계 완료"), 300));
+  return new Promise((resolve) => setTimeout(() => resolve("1단계 완료"), 300));
 }
 function step2() {
-  return new Promise(resolve => setTimeout(() => resolve("2단계 완료"), 400));
+  return new Promise((resolve) => setTimeout(() => resolve("2단계 완료"), 400));
 }
 function step3() {
-  return new Promise(resolve => setTimeout(() => resolve("3단계 완료"), 500));
+  return new Promise((resolve) => setTimeout(() => resolve("3단계 완료"), 500));
 }
 
 /*
@@ -20,3 +21,14 @@ function step3() {
 2단계 완료
 3단계 완료
 */
+
+step1()
+  .then((res1) => {
+    console.log(res1);
+    return step2();
+  })
+  .then((res2) => {
+    console.log(res2);
+    return step3();
+  })
+  .then((res3) => console.log(res3));

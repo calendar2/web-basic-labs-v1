@@ -8,6 +8,20 @@
     </form>
     <script>
       // TODO: 둘 다 값이 있으면 버튼 활성화, 아니면 비활성화
+      const email = document.querySelector("#email2");
+      const pw = document.querySelector("#pw2");
+      const okBtn = document.querySelector("#okBtn");
+
+      email.addEventListener("input", update);
+      pw.addEventListener("input", update);
+
+      function update() {
+        if (email.value && pw.value) {
+          okBtn.disabled = false;
+        } else {
+          okBtn.disabled = true;
+        }
+      }
     </script>
   </body>
 </html>
